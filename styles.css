@@ -147,4 +147,14 @@ body {
 }
 
 
-
+@media (max-width:480px){
+    body {
+        justify-content: end;
+        background: #000;
+    }
+    .container{
+        width:390px;
+        border-radius: 0px;
+        
+    }
+}
