@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+        function empty(){
+            var e = document.getElementById('res').value='';
+        }
+        function show(input){
+            var e = document.getElementById('res').value+=input;
+        }
+        function preshow(input){
+            var e = document.getElementById("res").value+= input;
+        }
+        function calc(){
+            var output = eval(document.getElementById('res').value);
+            document.getElementById("res").value=output;
+        }
+        const btn = document.querySelector(".btn");
+  
+    // Listen for click event
+    btn.onclick = function (e) {
+  
+        // Create span element
+        let ripple = document.createElement("span");
+  
+        // Add ripple class to span
+        ripple.classList.add("ripple");
+  
+        // Add span to the button 
+        this.appendChild(ripple);
+  
+        // Get position of X
+        let x = e.clientX - e.target.offsetLeft;
+  
+        // Get position of Y 
+        let y = e.clientY - e.target.offsetTop;
+  
+        // Position the span element
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+  
+        // Remove span after 0.3s
+        setTimeout(() => {
+            ripple.remove();
+        }, 300);
+  
+    };
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="display">
+                <input type="text" id="res" class="answer"/>
+            </div>
+            <div class="keypad">
+                <button onclick="empty()" >AC</button>
+                <button onclick="preshow('-')">+/-</button>
+                <button onclick="show('%')">%</button>
+                <button onclick="show('/')">/</button>
+
+                <button onclick="show('7')">7</button>
+                <button onclick="show('8')">8</button>
+                <button onclick="show('9')">9</button>
+                <button onclick="show('*')">x</button>
+                
+                
+
+                <button onclick="show('4')">4</button>
+                <button onclick="show('5')">5</button>
+                <button onclick="show('6')">6</button>
+                <button onclick="show('-')">-</button>
+
+                <button onclick="show('1')">1</button>
+                <button onclick="show('2')">2</button>
+                <button onclick="show('3')">3</button>
+                <button onclick="show('+')">+</button>
+
+                
+
+            </div>
+            <div class="extra">
+                <button onclick="show('0')" id="zero">0</button>
+                
+                <button onclick="show('.')">.</button>
+                <button onclick="calc()">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

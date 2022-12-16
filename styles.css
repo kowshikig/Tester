@@ -1,0 +1,150 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.container {
+    width:380px;
+    height:610px;
+    background: #000;
+    border-radius: 25px;
+    
+    
+}
+.wrapper {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+.display {
+    width:100%;
+    height:230px;
+    background: #000;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    background: #000;
+    padding:0px 20px;
+
+
+}
+.answer {
+    width: 100%;
+    height:80px;
+    background: #000;
+    color:white;
+    padding: 10px;
+    font-size: 60px;
+    display:grid;
+    grid-template-columns: auto;
+    border:none;
+
+}
+
+.keypad {
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    padding:10px;
+    place-items: center;
+
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+.keypad button {
+    width:60px;
+    height:60px;
+    background: #1c1c1c;
+    color:white;
+    border:none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    
+
+}
+.btn {
+    animation: ripple 1s;
+    opacity:0;
+}
+.keypad button:nth-child(4){
+    background: #FF9500;
+}
+.keypad button:nth-child(8){
+    background:  #FF9500;
+}
+.keypad button:nth-child(12){
+    background:  #FF9500;
+}
+.keypad button:nth-child(16){
+    background:  #FF9500;
+}
+.extra {
+    width:100%;
+    display: grid;
+    grid-template-columns: 120px 60px 60px;
+    justify-content: space-around;
+    place-items: center;
+    padding: 0 15px;
+    margin-left: 8px;
+    gap:5px;
+    margin-top: -5px;
+}
+.extra button {
+    width:60px;
+    height:60px;
+    background: #1c1c1c;
+    border:none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color:white;
+}
+.extra :nth-child(2){
+    
+    margin-left: 10px;
+}
+.extra :nth-child(3){
+    background: #FF9500;
+}
+
+#zero {
+    width:150px;
+    margin-right: 0px;
+}
+
+
+
